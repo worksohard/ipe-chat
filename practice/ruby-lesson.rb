@@ -59,3 +59,15 @@
 #         exit
 #     end
 # end
+
+array = [1,2,3,4]
+
+sum = 0
+number = 0
+
+while number <= 3
+    sum += array[number]
+    number += 1
+end
+
+puts sum
