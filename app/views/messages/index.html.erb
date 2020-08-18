@@ -1,0 +1,43 @@
+<div class="main">
+    <div class="chat">
+        <div class="chat-1"> 
+            <% unless @messages.blank? %>
+                <% @messages.each do |message| %>   
+                    <div class="chat-2">
+                        <div class="chat-3-1">            
+                            <p class="username">
+                                USER NAME
+                                <span class="time">
+                                    <%= message.created_at.strftime("%Y/%m/%d(%a) %H:%M") %>
+                                </span>
+                            </p>
+
+                            <p class="sentence"><%= message.content %></p>
+                        </div>
+
+                        <div class="chat-3-2">
+                            <ul class="rewrite">
+                                <li class="edit-delate-1">
+                                    <a class="edit-delate-2" href="/">edit</a>
+                                </li>
+                                <li class="edit-delate-1">
+                                    <a class="edit-delate-2"href="/">delate</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>  
+                <% end %>
+            <% else %>
+                <div class="chat-2">
+                    <p>No message yet.</p>
+                </div>
+            <% end %>       
+        </div>
+    </div>
+    <div class="chat-form">
+        <form class="form">
+            <input class="text" type="text">
+            <input class="send" type="submit" value="SEND">
+        </form>
+    </div>
+</div>
